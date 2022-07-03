@@ -44,20 +44,16 @@ if(reserva.length == 0){
         const element = reserva[i];
         const { id, category, name, price, img, cantidad } = element;
         const reservaFinal = `
-        <div class='cardBooked'>
-            <div class='box'>
         <div id=${id} >
-            <img src="${img}" alt="Imagen de la room"> 
+            <img class="imgBooked" src="${img}" alt="Imagen de la room"> 
             <div class='boxBooked'>
-            <div class="head">Name: ${name}</div>
-            <div class="subT">Category: ${category}</div>
-            <div>Quantity booked: ${cantidad}</div>
-            <div class="price">Price per night: $${price.toLocaleString()}- Euros</div>
-            <div>Total Amount: $ ${(cantidad * price * localStorage.getItem("dateTotal")).toLocaleString()}- Euros</div>
+                <div class="head">Name: ${name}</div>
+                <div class="subT">Category: ${category}</div>
+                <div>Quantity booked: ${cantidad}</div>
+                <div class="price">Price per night: $${price.toLocaleString()}- Euros</div>
+                <div>Total Amount: $ ${(cantidad * price * localStorage.getItem("dateTotal")).toLocaleString()}- Euros</div>
+            </div>
             <button id='delete' class='btn'>Delete</button>
-        </div>
-        </div>
-        </div>
         </div>
         `
         tbody.innerHTML += reservaFinal
